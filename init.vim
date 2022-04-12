@@ -24,7 +24,7 @@ set shiftwidth=2 " width for autoindents
 set autoindent " indent a new line the same amount as the line just typed
 set relativenumber
 set number " add line numbers
-set wildmode=longest,list " get bash-like tab completions
+" set wildmode=longest,list " get bash-like tab completions
 set mouse=a " enable mouse click
 set ttyfast " Speed up scrolling in Vim
 " enable sectionned comment
@@ -116,15 +116,15 @@ if exists("&termguicolors") && exists("&winblend")
   syntax enable
   set termguicolors
   set winblend=0
-  set wildoptions=pum
   set pumblend=5
+  set wildoptions=pum
   set background=dark
   " colorscheme deep-space
   " let g:airline_theme='deep_space'
   " colorscheme scheakur
   " colorscheme one
   colorscheme onehalfdark
-  " let g:airline_theme='one'
+  let g:airline_theme='one'
   " background transparency
   highlight Normal guibg=none
   " highlight NonText guibg=none
