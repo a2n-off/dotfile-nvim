@@ -5,9 +5,8 @@
 
 local lspc = require'lspconfig'
 local cap = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local protocol = require('vim.lsp.protocol')
 
-local function onAttach()
+local function onattach()
   vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0}) -- show the definition
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0}) -- go to the definition, ctrl+ t for go back
   vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0}) -- go to type definition
@@ -19,15 +18,15 @@ end
 
 lspc.tsserver.setup {
   capabilities = cap,
-  on_attach = onAttach()
+  on_attach = onattach()
 }
 
 lspc.sumneko_lua.setup {
   capabilities = cap,
-  on_attach = onAttach()
+  on_attach = onattach()
 }
 
-lspc.angularls.setup{}
+-- lspc.angularls.setup{}
 
 lspc.bashls.setup{}
 
@@ -35,7 +34,7 @@ lspc.cssls.setup{}
 
 lspc.cssmodules_ls.setup{}
 
---lspc.eslint.setup{}
+lspc.eslint.setup{}
 
 lspc.html.setup{}
 
