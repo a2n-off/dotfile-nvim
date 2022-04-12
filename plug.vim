@@ -77,11 +77,19 @@ Plug 'hoob3rt/lualine.nvim'
 
 " telescope & dependency
 " -- Tl,Dr ---
-" fuzy finder
+" fuzzy finder over list
 " {{{
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/popup.nvim' " code dependency
+Plug 'nvim-lua/plenary.nvim' " code dependency
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " improve performance
+" }}}
+
+" gitsigns
+" -- Tl,Dr ---
+" give inline blame, line status in gutter, ...
+" {{{
+Plug 'lewis6991/gitsigns.nvim'
 " }}}
 
 call plug#end()

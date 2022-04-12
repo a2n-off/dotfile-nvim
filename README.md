@@ -9,6 +9,7 @@
 - all the `:checkhealth` is in green
 - I have `xclip` installed for the clipboard
 - I have `plug` for handling the nvim plugin
+- I have `ripgrep` for telescope
 
 # folder setup
 ```
