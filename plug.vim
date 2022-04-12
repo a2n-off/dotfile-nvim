@@ -68,4 +68,11 @@ Plug 'windwp/nvim-autopairs' " autopairs auto close () <> {} [] etc...
 Plug 'windwp/nvim-ts-autotag' " autopair html tag via treesitter
 " }}}
 
+" lualine
+" -- Tl,Dr ---
+" a simple status bar 
+" {{{
+Plug 'hoob3rt/lualine.nvim'
+" }}}
+
 call plug#end()
