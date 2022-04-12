@@ -15,6 +15,14 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 " }}}
 
+" treesitter
+" -- Tl,Dr ---
+" usefull plugin for talking to treesitter
+" do other stuff like highlighting based on treesitter
+" {{{
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+" }}}
+
 " snippet plugin 
 " -- Tl,Dr ---
 " give some snippet option to the cmp plugin
@@ -33,6 +41,31 @@ Plug 'onsails/lspkind-nvim'
 " onehalf theme
 " {{{
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" }}}
+
+" barbar and dependency
+" -- Tl,Dr ---
+" give a tabs navbar for each buffer
+" {{{
+Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " icons dependency for barbar
+" }}}
+
+" vim-commentary
+" -- Tl,Dr ---
+" comment line w/ gcc
+" {{{
+Plug 'tpope/vim-commentary'
+" }}}
+
+" surround and autopair plugin
+" -- Tl,Dr ---
+" help to autoclose {}, [], (), if/endif, ...
+" {{{
+Plug 'tpope/vim-surround' " change surround w/ cs
+Plug 'tpope/vim-endwise' " end some stuff like if/endif 
+Plug 'windwp/nvim-autopairs' " autopairs auto close () <> {} [] etc...
+Plug 'windwp/nvim-ts-autotag' " autopair html tag via treesitter
 " }}}
 
 call plug#end()
