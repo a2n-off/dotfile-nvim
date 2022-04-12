@@ -123,6 +123,7 @@ if exists("&termguicolors") && exists("&winblend")
   " let g:airline_theme='deep_space'
   " colorscheme scheakur
   " colorscheme one
+  colorscheme onehalfdark
   " let g:airline_theme='one'
   " background transparency
   highlight Normal guibg=none
