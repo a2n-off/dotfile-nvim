@@ -24,7 +24,7 @@ vim.diagnostic.config({
   --   prefix = '●', -- icon for the inline
   -- },
   virtual_text = false,
-  update_in_insert = true -- if true show the diag in insert mode
+  update_in_insert = false -- if true show the diag in insert mode
 })
 
 -- each server I want

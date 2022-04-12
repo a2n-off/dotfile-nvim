@@ -75,4 +75,13 @@ Plug 'windwp/nvim-ts-autotag' " autopair html tag via treesitter
 Plug 'hoob3rt/lualine.nvim'
 " }}}
 
+" telescope & dependency
+" -- Tl,Dr ---
+" fuzy finder
+" {{{
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" }}}
+
 call plug#end()
