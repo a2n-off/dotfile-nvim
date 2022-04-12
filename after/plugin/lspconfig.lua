@@ -8,11 +8,24 @@ local cap = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_cl
 
 -- change signs on the gutter
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+-- open diag when cursor is in the error line
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 250
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+
+-- lsp config
+vim.diagnostic.config({
+  -- virtual_text = {
+  --   prefix = '●', -- icon for the inline
+  -- },
+  virtual_text = false,
+  update_in_insert = true -- if true show the diag in insert mode
+})
 
 -- each server I want
 local servers = {
