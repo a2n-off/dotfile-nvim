@@ -132,6 +132,10 @@ endif
 
 " }}}
 
+" dashboard configuration " {{{
+let g:dashboard_default_executive ='telescope'
+" }}}
+
 " Keybinding " {{{
 
   " chadtree " {{{

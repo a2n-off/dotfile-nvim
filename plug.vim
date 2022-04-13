@@ -99,4 +99,11 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'ms-jpq/chadtree', { 'branch': 'chad', 'do': 'python3 -m chadtree deps' }
 " }}}
 
+" greetter
+" -- Tl,Dr ---
+" nvim homepage
+" {{{
+Plug 'glepnir/dashboard-nvim'
+" }}}
+
 call plug#end()
