@@ -134,6 +134,10 @@ endif
 
 " Keybinding " {{{
 
+  " chadtree " {{{
+  nnoremap <C-t> :CHADopen<CR>
+  "}}}
+
 " barbar " {{{
 " Move to previous/next
 nnoremap <silent> <A-,> :BufferPrevious<CR>
@@ -157,6 +161,7 @@ nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
 nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap <C-_> <Cmd>Telescope current_buffer_fuzzy_find<CR>
 " }}}
 
 " }}}

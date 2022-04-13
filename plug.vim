@@ -92,4 +92,11 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " improve perf
 Plug 'lewis6991/gitsigns.nvim'
 " }}}
 
+" chadtree
+" -- Tl,Dr ---
+" file explorer
+" {{{
+Plug 'ms-jpq/chadtree', { 'branch': 'chad', 'do': 'python3 -m chadtree deps' }
+" }}}
+
 call plug#end()
