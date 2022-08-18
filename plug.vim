@@ -43,6 +43,11 @@ Plug 'onsails/lspkind-nvim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " }}}
 
+" catppuccin theme
+" {{{
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" }}}
+
 " barbar and dependency
 " -- Tl,Dr ---
 " give a tabs navbar for each buffer
@@ -104,6 +109,13 @@ Plug 'ms-jpq/chadtree', { 'branch': 'chad', 'do': 'python3 -m chadtree deps' }
 " nvim homepage
 " {{{
 Plug 'glepnir/dashboard-nvim'
+" }}}
+
+" markdown-preview
+" -- Tl;Dr ---
+" simple mk previwer
+" {{{
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " }}}
 
 call plug#end()
