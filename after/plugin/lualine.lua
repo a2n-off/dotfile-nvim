@@ -1,6 +1,20 @@
 local status, lualine = pcall(require, 'lualine')
 if (not status) then return end
 
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand('%:p:h')
+    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end,
+}
+
 local config = {
   options = {
     icons_enabled = true,
@@ -11,12 +25,27 @@ local config = {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
-    lualine_c = { {
+    lualine_b = {
+      {
+        'branch',
+        icon = '',
+        condition = conditions.check_git_workspace
+      },
+      {
+        'diff',
+        symbols = { added = ' ', modified = '柳', removed = ' ' },
+        diff_color = {
+          added = { fg = '#40a02b' },
+          modified = { fg = '#fe640b' },
+          removed = { fg = '#d20f39' },
+        }
+      }
+    },
+    lualine_c = {{
       'filename',
       file_status = true, -- displays file status (readonly status, modified status)
       path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
-    } },
+    }},
     lualine_x = {
       { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' } },
       'encoding',
@@ -51,22 +80,7 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-local conditions = {
-  buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-  end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > 80
-  end,
-  check_git_workspace = function()
-    local filepath = vim.fn.expand('%:p:h')
-    local gitdir = vim.fn.finddir('.git', filepath .. ';')
-    return gitdir and #gitdir > 0 and #gitdir < #filepath
-  end,
-}
-
-ins_left {
-  -- Lsp server name .
+ins_right {
   function()
     local msg = 'no lsp'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -83,24 +97,6 @@ ins_left {
     return msg
   end,
   icon = ''
-}
-
-ins_right {
-  'branch',
-  icon = '',
-  --color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
-  diff_color = {
-    added = { fg = '#40a02b' },
-    modified = { fg = '#fe640b' },
-    removed = { fg = '#d20f39' },
-  },
-  cond = conditions.hide_in_width,
 }
 
 lualine.setup(config)
