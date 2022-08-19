@@ -1,4 +1,6 @@
-local tree = require 'nvim-treesitter.configs'
+local status, tree = pcall(require, 'nvim-treesitter.configs')
+if (not status) then return end
+
 local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
 
 tree.setup {
