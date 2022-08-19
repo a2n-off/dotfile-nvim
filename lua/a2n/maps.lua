@@ -1,5 +1,3 @@
-print('📜 maps.lua loaded')
-
 local keymap = vim.keymap
 
 -- disabled the yank w/ x

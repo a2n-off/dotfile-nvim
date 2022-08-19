@@ -1,5 +1,3 @@
-print('📜 base.lua loaded')
-
 vim.cmd("autocmd!")
 
 -- script encoding

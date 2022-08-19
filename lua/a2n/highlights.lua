@@ -1,5 +1,3 @@
-print('📜 highlights.lua loaded')
-
 -- theme configuration
 vim.opt.cursorline = true
 vim.opt.termguicolors = true

@@ -1,5 +1,3 @@
-print('📜 init.lua loaded')
-
 require('a2n/base')
 require('a2n/highlights')
 require('a2n/maps')
