@@ -28,6 +28,7 @@ packer.startup(
     use 'kyazdani42/nvim-web-devicons' -- file icons
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
